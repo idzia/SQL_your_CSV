@@ -1,7 +1,7 @@
 package com.codecool.controller;
 
-import com.codecool.dao.BookDao;
-import com.codecool.dao.BookDaoStreamImp;
+
+
 import com.codecool.dao.CsvReader;
 import com.codecool.model.Book;
 
@@ -9,11 +9,11 @@ import java.util.List;
 
 public class BookController {
 
-    private BookDao bookDaoStream;
-
-    public BookController(BookDao bookDaoStream) {
-        this.bookDaoStream = bookDaoStream;
-    }
+//    private BookDao bookDaoStream;
+//
+//    public BookController(BookDao bookDaoStream) {
+//        this.bookDaoStream = bookDaoStream;
+//    }
 //
 //    public List<Book> selectAllBook(){
 //        return bookDaoStream.getAllBook();

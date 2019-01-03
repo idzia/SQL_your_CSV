@@ -42,12 +42,11 @@ public class Parser {
     }
 
 
-    public List<String> getFields() {
-        List<String> fieldsList = Arrays.stream(parsedQueryList.get(FIELDS).split(","))
+    public List<String> getQueryFields() {
+        List<String> queryFieldsList = Arrays.stream(parsedQueryList.get(FIELDS).split(","))
                                         .map(item-> item.trim()).collect(Collectors.toList());
-        return fieldsList;
+        return queryFieldsList;
     }
-
 
     public String getFileName() {
         return parsedQueryList.get(FILE_NAME);

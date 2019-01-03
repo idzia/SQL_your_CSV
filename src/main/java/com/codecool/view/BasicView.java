@@ -5,7 +5,16 @@ import com.codecool.model.Book;
 import java.util.List;
 import java.util.Scanner;
 
-public class BasickView {
+public class BasicView implements View{
+
+    public void displayResult(List<List<String>> result){
+        for(List<String> item : result) {
+            System.out.println(item);
+        }
+    }
+
+
+
     public void mainView(List<String> menuList){
         System.out.println("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         Integer number = 1;
