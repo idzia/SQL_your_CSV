@@ -10,8 +10,6 @@ import com.codecool.view.BasicView;
 import com.codecool.view.View;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -21,7 +19,7 @@ public class App {
         System.out.println("Enter your query: ");
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AutoConfig.class);
-        Reader data = context.getBean(CsvReader.class);
+        Reader reader = context.getBean(CsvReader.class);
         View view = context.getBean(BasicView.class);
 
 
@@ -31,10 +29,8 @@ public class App {
         String fileName = parser.getFileName();
 
 
-        DataDao dataDaoStream = new DataDaoStream(data, fileName);
-
-        List<String> condition = new ArrayList<String>();
-        view.displayResult(dataDaoStream.select(fileName, parser.getQueryFields(), condition));
+        DataDao dataDaoStream = new DataDaoStream(reader, fileName);
+        view.displayResult(dataDaoStream.select(fileName, parser.getQueryFields(), parser.getValidWhereCondition()));
 
     }
 
